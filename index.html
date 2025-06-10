@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Days Passed Since June 6, 2025</title>
+	<style>
+		*{
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+		}
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			background-image: url('./gradient.jpeg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: rgb(230, 208, 208);
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		#days {
+			font-size: 40px;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="parent">
+		<h1>
+			<p id="days">0</p> without talking to you 😞
+		</h1>
+	</div>
+	
+
+	<script>
+		function calculateDaysPassed() {
+			const startDate = new Date('2025-06-06');
+			const today = new Date();
+
+			startDate.setHours(0, 0, 0, 0);
+			today.setHours(0, 0, 0, 0);
+
+			const diffTime = today - startDate;
+			const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+			document.getElementById('days').textContent = diffDays >= 0
+				? `${diffDays} day${diffDays !== 1 ? 's' : ''}`
+				: `June 6, 2025 is in the future!`;
+		}
+
+		calculateDaysPassed();
+	</script>
+</body>
+
+</html>
